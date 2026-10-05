@@ -1,0 +1,4 @@
+const P = { home: 'M3 11l9-8 9 8M5 10v10h14V10M10 20v-6h4v6', shield: 'M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6l8-3zM9 12l2 2 4-4', heart: 'M12 20s-8-5-8-11a4.5 4.5 0 018-2.5A4.5 4.5 0 0120 9c0 6-8 11-8 11z', calendar: 'M4 6h16v14H4zM4 10h16M8 3v4M16 3v4', phone: 'M5 4h4l2 5-2.5 1.5a11 11 0 005 5L15 13l5 2v4a2 2 0 01-2 2A16 16 0 013 6a2 2 0 012-2z', mail: 'M3 5h18v14H3zM3 6l9 7 9-7', pin: 'M12 21s-7-6-7-11a7 7 0 0114 0c0 5-7 11-7 11zM12 7.5a2.5 2.5 0 100 5 2.5 2.5 0 000-5z', chat: 'M4 5h16v11H9l-5 4V5z', check: 'M5 12l5 5 9-10' }
+export default function Icon({ name, size = 24 }) {
+  return <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d={P[name]} /></svg>
+}
