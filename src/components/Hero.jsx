@@ -1,12 +1,13 @@
 import { Link } from 'react-router-dom'
 import ImageBox from './ImageBox.jsx'
 import Icon from './Icon.jsx'
+import { CONTACT } from '../data.js'
 import { useBooking } from '../BookingContext.jsx'
-export default function Hero({ title, sub, cta, service, image, alt, secondary }) {
+export default function Hero({ title, sub, cta, service, image, images, alt, secondary, pills, stats, dark }) {
   const { openBooking } = useBooking()
   return (
     <section className="hero2"><div className="container hero2-grid">
-      <div className="hero2-left fade-up">
+      <div className={'hero2-left fade-up' + (dark ? ' dark' : '')}>
         {secondary && <div className="chips">
           <div className="chip"><span className="star">★</span><div><b>4.9</b><small>Patient Rating</small></div></div>
           <div className="chip"><div className="avs">{['A', 'R', 'S', 'M'].map((x) => <i key={x}>{x}</i>)}</div><div><b>1,000+</b><small>Patients Served</small></div></div>
@@ -16,9 +17,15 @@ export default function Hero({ title, sub, cta, service, image, alt, secondary }
           {/* <button className="btn btn-primary" onClick={() => openBooking(service)}>{cta}<span className="dot">→</span></button> */}
           {secondary && <Link className="btn btn-outline" to={secondary[1]}>{secondary[0]}</Link>}
         </div>
+        {pills && <div className="hero-pills">{pills.map((t) => <span key={t}>{t}</span>)}</div>}
+        {dark && <div className="btn-row"><button className="btn btn-white" onClick={() => openBooking(service)}>{cta}<span className="dot">→</span></button><a className="btn btn-ghost-light" href={'tel:' + CONTACT.phone.replace(/\s/g, '')}>Call Us</a></div>}
+        {stats && <div className="hero-stats">{stats.map(([v, l]) => <div key={l}><b>{v}</b><span>{l}</span></div>)}</div>}
         {secondary && <div className="trust-row">{['Trusted Healthcare Professionals', 'Personalized Care', 'Convenient Home Visits'].map((t) => <span key={t}><Icon name="check" size={18} />{t}</span>)}</div>}
       </div>
-      <ImageBox src={image} alt={alt} className="hero2-img" />
+      {images ? <div className="hero-collage">
+        {images.map((it, i) => { const [src, pos] = [].concat(it); return <div key={src} className={'collage-tile t' + (i + 1)}><img src={src} alt={alt} style={pos ? { objectPosition: pos } : undefined} /></div> })}
+        <div className="collage-badge">Care that comes home</div>
+      </div> : <ImageBox src={image} alt={alt} className="hero2-img" />}
     </div></section>
   )
 }

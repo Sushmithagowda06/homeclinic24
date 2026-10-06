@@ -12,12 +12,14 @@ export default function Header() {
       <div className="container header-row">
         <Link to="/" className="logo-link" onClick={() => setOpen(false)}><img src="/images/logo.png" alt="Home Clinic 24 – Health care at your Door Step" /></Link>
         <span className="loc"><Icon name="pin" size={18} />Mysuru</span>
+        {open && <div className="nav-backdrop" onClick={() => setOpen(false)} />}
         <nav className={'nav' + (open ? ' open' : '')}>
+          <div className="nav-head"><span>Menu</span><button type="button" className="nav-close" aria-label="Close menu" onClick={() => setOpen(false)}>✕</button></div>
           {LINKS.map(([to, l]) => <NavLink key={to} to={to} end={to === '/'} onClick={() => setOpen(false)}>{l}</NavLink>)}
         </nav>
         <div className="header-actions">
           {/* <button className="btn btn-primary btn-sm" onClick={() => openBooking()}>Book Now<span className="dot">→</span></button> */}
-          <button className="burger" aria-label="Menu" onClick={() => setOpen(!open)}><span /><span /><span /></button>
+          <button className="burger" aria-label="Menu" aria-expanded={open} onClick={() => setOpen(!open)}><span /><span /><span /></button>
         </div>
       </div>
     </header>

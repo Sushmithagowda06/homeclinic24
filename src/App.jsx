@@ -3,6 +3,7 @@ import { Routes, Route, useLocation } from 'react-router-dom'
 import { BookingProvider } from './BookingContext.jsx'
 import Header from './components/Header.jsx'
 import Footer from './components/Footer.jsx'
+import FloatingButtons from './components/FloatingButtons.jsx'
 import BookingModal from './components/BookingModal.jsx'
 
 import Home from './pages/Home.jsx'
@@ -57,6 +58,7 @@ export default function App() {
       </main>
 
       <Footer />
+      <FloatingButtons />
       <BookingModal />
     </BookingProvider>
   )
