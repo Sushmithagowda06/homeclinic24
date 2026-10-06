@@ -1,15 +1,15 @@
 import Hero from '../components/Hero.jsx'
-import ServiceCard from '../components/ServiceCard.jsx'
+import HospitalCard from '../components/HospitalCard.jsx'
 import FeatureCard from '../components/FeatureCard.jsx'
 import TestimonialCard from '../components/TestimonialCard.jsx'
 import PhotoCarousel from '../components/PhotoCarousel.jsx'
 import FAQ from '../components/FAQ.jsx'
 import CTASection from '../components/CTASection.jsx'
-import { SERVICES, WHY, STEPS, STATS, TESTIMONIALS } from '../data.js'
+import { WHY, STEPS, STATS, TESTIMONIALS } from '../data.js'
 export default function Home() {
   return (<div className="home">
     <Hero title={<>Quality Healthcare,<br /><em>Right at Your Doorstep</em></>} sub="Professional doctor consultations and personalized physiotherapy at home, designed around your comfort and convenience." cta="Book a Home Consultation" service="doctor" secondary={['Explore Home Consultation', '/doctor-consultation']} images={[['/images/home-clinic.jpg', '78% 40%'], ['/images/consult-family.jpg', '30% 40%'], ['/images/consult-injection.jpg', '55% 40%']]} alt="Doctor consulting a patient at home" />
-    <section className="section"><div className="container"><div className="head fancy"><h2>Healthcare at Your Doorstep</h2><p>Professional care from trusted healthcare experts, delivered to the comfort of your home.</p></div><div className="grid-2">{SERVICES.map((s) => <ServiceCard key={s.id} s={s} />)}</div></div></section>
+    <section className="section"><div className="container"><div className="head fancy"><h2>Healthcare at Your Doorstep</h2><p>From the first consultation to tests, treatment and recovery, your entire care journey happens right inside your home.</p></div><HospitalCard /></div></section>
     <section className="section alt why"><div className="container"><div className="head fancy"><h2>Why Choose Home Clinic 24?</h2></div><div className="why-split"><div className="clinic-banner"><img src="/images/home-clinic.jpg" alt="Home Clinic – Quality healthcare, right at your doorstep" loading="lazy" /></div><div className="why-cards">{WHY.map(([i, t, x]) => <FeatureCard key={t} icon={i} title={t} text={x} />)}</div></div></div></section>
     <section className="section"><div className="container"><div className="head fancy"><h2>Care in Every Home</h2><p>Real moments from the home visits we deliver every day.</p></div>
       <PhotoCarousel items={[['/images/consult-bp.jpg', 'BP checkups at home'], ['/images/about-safety.jpg', 'Safe, hygienic home visits'], ['/images/consult-injection.jpg', 'Injections and treatment at home'], ['/images/hero-consult.jpg', 'Friendly doctor consultations'], ['/images/hero-care.jpg', 'Gentle support for elderly patients'], ['/images/hero-visit.jpg', 'Caring for little ones at home'], ['/images/consult-family.jpg', 'Vaccinations for the whole family'], ['/images/physio.jpg', 'Physiotherapy in your living room']]} />
