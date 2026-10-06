@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 import ImageBox from './ImageBox.jsx'
 import Icon from './Icon.jsx'
-import { CONTACT } from '../data.js'
+import { CONTACT, WHATSAPP_COMMUNITY } from '../data.js'
 import { useBooking } from '../BookingContext.jsx'
 export default function Hero({ title, sub, cta, service, image, images, alt, secondary, pills, stats, dark }) {
   const { openBooking } = useBooking()
@@ -16,6 +16,7 @@ export default function Hero({ title, sub, cta, service, image, images, alt, sec
         <div className="btn-row">
           {/* <button className="btn btn-primary" onClick={() => openBooking(service)}>{cta}<span className="dot">→</span></button> */}
           {secondary && <Link className="btn btn-outline" to={secondary[1]}>{secondary[0]}</Link>}
+          {secondary && <a className="btn btn-wa" href={WHATSAPP_COMMUNITY} target="_blank" rel="noreferrer"><Icon name="chat" size={18} />Join Our Community</a>}
         </div>
         {pills && <div className="hero-pills">{pills.map((t) => <span key={t}>{t}</span>)}</div>}
         {dark && <div className="btn-row"><button className="btn btn-white" onClick={() => openBooking(service)}>{cta}<span className="dot">→</span></button><a className="btn btn-ghost-light" href={'tel:' + CONTACT.phone.replace(/\s/g, '')}>Call Us</a></div>}

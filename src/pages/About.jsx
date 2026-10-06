@@ -27,7 +27,7 @@ export default function About() {
       <div className="serve-grid">{[['👴', 'Elderly Patients'], ['🛏️', 'Bedridden & Post-Surgery'], ['🩺', 'BP & Diabetes Care'], ['👨‍👩‍👧', 'Busy Families']].map(([e, t]) => <div key={t} className="serve-item"><i>{e}</i><h3>{t}</h3></div>)}</div>
       <p className="serve-note">And anyone who prefers quality medical care at home.</p>
     </div></section>
-    <section className="section banner-sec"><div className="container"><div className="clinic-banner"><img src="/images/home-clinic.jpg" alt="Home Clinic – Quality healthcare, right at your doorstep" loading="lazy" /></div></div></section>
-    <CTASection />
+    {/* <section className="section banner-sec"><div className="container"><div className="clinic-banner"><img src="/images/home-clinic.jpg" alt="Home Clinic – Quality healthcare, right at your doorstep" loading="lazy" /></div></div></section>
+    <CTASection /> */}
   </>)
 }

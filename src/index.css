@@ -430,3 +430,27 @@ img{max-width:100%}
 .hosp-journey span b{width:26px;height:26px;border-radius:50%;background:linear-gradient(135deg,var(--green),var(--blue));color:#fff;display:grid;place-items:center;font-size:.8rem;margin:0}
 .hosp-journey span:not(:last-child)::after{content:'→';position:absolute;right:-18px;color:#9fb0f5;font-weight:700}
 .hosp-journey span:not(:last-child){margin-right:20px}
+/* Compact hospital card */
+.hosp{grid-template-columns:.65fr 1.5fr;border-radius:28px}
+.hosp-photo{min-height:0}
+.hosp-tag{left:12px;bottom:12px;padding:7px 14px;font-size:.8rem}
+.hosp-body{padding:24px 28px;gap:12px}
+.hosp-body h3{font-size:1.25rem}
+.hosp-body>p{font-size:.92rem;line-height:1.5}
+.hosp-journey span{font-size:.82rem;padding:4px 12px 4px 4px}.hosp-journey span b{width:22px;height:22px;font-size:.72rem}
+.hosp-core>div{padding:9px 12px;border-radius:14px}.hosp b{font-size:.9rem}.hosp-core span,.hosp-hot span{font-size:.78rem}
+.hosp-nurse{border:1px dashed #b9c6fa;border-radius:16px;padding:12px 14px;background:#fff}
+.hosp-nurse h4{font-size:.88rem;color:var(--blue);margin:0 0 8px}
+.hosp-nurse>div{display:flex;flex-wrap:wrap;gap:6px 8px}
+.hosp-nurse span{display:inline-flex;align-items:center;gap:5px;font-size:.78rem;font-weight:600;background:#eef1ff;color:var(--navy);padding:4px 10px;border-radius:999px}.hosp-nurse svg{color:var(--green)}
+.hosp-hot>div{padding:12px 14px;border-radius:16px;gap:10px}
+.hosp-hot i{width:38px;height:38px}.hosp-hot b{font-size:.95rem;margin-top:6px}
+.hosp-more span{font-size:.82rem}
+@media(max-width:900px){.hosp{grid-template-columns:1fr}.hosp-photo{height:180px}.hosp-body{padding:20px 18px}}
+.hosp-nurse{border:1px solid #c7d3ff;background:linear-gradient(160deg,#fff,#eef1ff)}
+.hosp-nurse h4{display:inline-flex;align-items:center;gap:8px;font-size:.95rem;color:#fff;background:linear-gradient(90deg,var(--green),var(--blue));padding:6px 16px;border-radius:999px;box-shadow:0 8px 18px rgba(58,94,240,.3);margin:0 0 12px}
+.hosp-nurse h4::before{content:'★';font-size:.85rem}
+.hosp-nurse .tc-tag{margin-top:10px;font-size:.74rem;padding:4px 12px}
+.btn-wa{display:inline-flex;align-items:center;gap:8px;background:#25d366;color:#fff;border:2px solid #25d366}
+.btn-wa:hover{background:#1ebe5a;border-color:#1ebe5a}
+.hero2-left .btn-row{flex-wrap:wrap;gap:12px}

@@ -1,5 +1,7 @@
 // ===== Edit content here =====
-export const CONTACT = { phone: '+91 98765 43210', email: 'care@homeclinic24.in', whatsapp: '+91 98765 43210', location: 'Mysuru, Karnataka, India' }
+export const CONTACT = { phone: '+91 96066 68266', email: 'care@homeclinic24.in', whatsapp: '+91 96066 68266', location: 'Mysuru, Karnataka, India' }
+// Paste your WhatsApp community invite link here (e.g. https://chat.whatsapp.com/XXXX)
+export const WHATSAPP_COMMUNITY = '#'
 export const SERVICES = [
   { id: 'doctor', img: '/images/consult-family.jpg', title: 'Doctor Home Consultation', desc: 'Get professional medical consultation from qualified doctors in the comfort and privacy of your home.', features: ['Doctor home visit', 'Medical consultation', 'Health assessment', 'Treatment guidance', 'Follow-up care'], cta: 'Book Consultation', to: '/doctor-consultation', price: 599 },
   { id: 'physio', img: '/images/physio.jpg', title: 'Physiotherapy at Home', desc: 'Receive personalized physiotherapy sessions at home to improve mobility, manage pain and support recovery.', features: ['Personalized assessment', 'One-on-one sessions', 'Pain management', 'Mobility improvement', 'Recovery support'], cta: 'Book Physiotherapy', to: '/physiotherapy', price: 899 },
