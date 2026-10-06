@@ -18,7 +18,7 @@ export default function Hero({ title, sub, cta, service, image, alt, secondary }
         </div>
         {secondary && <div className="trust-row">{['Trusted Healthcare Professionals', 'Personalized Care', 'Convenient Home Visits'].map((t) => <span key={t}><Icon name="check" size={18} />{t}</span>)}</div>}
       </div>
-      <ImageBox src={image} alt={alt} className="public\images\hero.jpg" />
+      <ImageBox src={image} alt={alt} className="hero2-img" />
     </div></section>
   )
 }

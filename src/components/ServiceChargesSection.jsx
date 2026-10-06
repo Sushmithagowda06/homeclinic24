@@ -3,6 +3,15 @@ import { useBooking } from '../BookingContext.jsx'
 
 export default function ServiceChargesSection({ data }) {
   const { openBooking } = useBooking()
+  const layout = [
+    ['Doctor & Visit Charges', 'Dressing', 'Additional Services'],
+    ['Injections & Procedures', 'IP Admission Cases'],
+    ['Other Nursing & Care Services'],
+  ]
+  const byName = Object.fromEntries(data.map((c) => [c.category, c]))
+  const placed = new Set(layout.flat())
+  const columns = layout.map((names) => names.map((n) => byName[n]).filter(Boolean))
+  data.filter((c) => !placed.has(c.category)).forEach((c, i) => columns[i % 3].push(c))
 
   return (
     <section className="section">
@@ -13,14 +22,18 @@ export default function ServiceChargesSection({ data }) {
         </div> */}
 
         <div className="charges-grid">
-          {data.map((category) => (
-            <div key={category.category} className="charge-category card">
-              <h3 className="category-title">{category.category}</h3>
-              <div className="services-list">
-                {category.services.map((service) => (
-                  <ServiceChargeCard key={service.name} service={service} />
-                ))}
-              </div>
+          {columns.map((col, i) => (
+            <div key={i} className="charges-col">
+              {col.map((category) => (
+                <div key={category.category} className="charge-category card">
+                  <h3 className="category-title">{category.category}</h3>
+                  <div className="services-list">
+                    {category.services.map((service) => (
+                      <ServiceChargeCard key={service.name} service={service} />
+                    ))}
+                  </div>
+                </div>
+              ))}
             </div>
           ))}
         </div>

@@ -4,7 +4,7 @@ import { CONTACT } from '../data.js'
 export default function Contact() {
   const [sent, setSent] = useState(false)
   return (
-    <section className="section"><div className="container">
+    <section className="section contact-sec"><div className="container">
       <div className="head"><h1 className="h1s">Need Help?</h1><p>We’re happy to answer your questions.</p></div>
       <div className="grid-2 contact">
         <div className="card info">{[['phone', 'Phone', CONTACT.phone], ['mail', 'Email', CONTACT.email], ['chat', 'WhatsApp', CONTACT.whatsapp], ['pin', 'Location', CONTACT.location]].map(([i, l, v]) => <div key={l}><div className="icon-wrap"><Icon name={i} /></div><div><small>{l}</small><b>{v}</b></div></div>)}</div>
