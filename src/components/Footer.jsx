@@ -9,6 +9,7 @@ export default function Footer() {
         <div><h4>Support</h4><span>{CONTACT.phone}</span><span>{CONTACT.email}</span><a className="pill" href={"https://wa.me/" + CONTACT.whatsapp.replace(/\D/g, "")} target="_blank" rel="noreferrer">WhatsApp chat</a></div>
       </div>
       <div className="container footer-bottom"><span>© 2026 Home Clinic 24. All Rights Reserved.</span><span><a href="#">Privacy Policy</a> · <a href="#">Terms &amp; Conditions</a></span></div>
+      <div className="container footer-bottom" style={{ justifyContent: 'center' }}><span>Made with ❤️ by Linqway Technicks Pvt Ltd</span></div>
     </footer>
   )
 }
