@@ -1,7 +1,7 @@
 import Hero from '../components/Hero.jsx'
 import HospitalCard from '../components/HospitalCard.jsx'
 import FeatureCard from '../components/FeatureCard.jsx'
-import TestimonialCard from '../components/TestimonialCard.jsx'
+import TestimonialSlider from '../components/TestimonialSlider.jsx'
 import PhotoCarousel from '../components/PhotoCarousel.jsx'
 import FAQ from '../components/FAQ.jsx'
 import CTASection from '../components/CTASection.jsx'
@@ -16,7 +16,7 @@ export default function Home() {
     </div></section>
     <section className="section steps-sec"><div className="container"><div className="head fancy"><h2>Healthcare Made Simple</h2></div><div className="steps">{STEPS.map((s, i) => <div key={s} className="step"><span>{i + 1}</span><h3>{s}</h3></div>)}</div></div></section>
     <section className="section stats-band"><div className="container"><div className="head fancy"><h2>Care You Can Trust</h2></div><div className="trust-split"><div className="trust-photos"><img className="p1" src="/images/consult-family.jpg" alt="Nurse vaccinating a child at home" /><img className="p2" src="/images/hero-care.jpg" alt="Doctor assisting an elderly patient" /><img className="p3" src="/images/about-safety.jpg" alt="Safe, hygienic home visit" /></div><div className="trust-stats">{STATS.map(([v, l]) => <div key={l} className="card stat"><b>{v}</b><span>{l}</span></div>)}</div></div></div></section>
-    <section className="section"><div className="container"><div className="head fancy"><h2>What Our Patients Say</h2></div><div className="grid-2 tg">{TESTIMONIALS.map((t) => <TestimonialCard key={t.name} t={t} />)}</div></div></section>
+    <section className="section"><div className="container"><div className="head fancy"><h2>What Our Patients Say</h2></div><TestimonialSlider items={TESTIMONIALS} /></div></section>
     <section className="section alt"><div className="container narrow"><div className="head fancy"><h2>Frequently Asked Questions</h2></div><FAQ /></div></section>
     <CTASection />
   </div>)

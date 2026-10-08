@@ -19,7 +19,7 @@ export default function Hero({ title, sub, cta, service, image, images, alt, sec
           {secondary && <a className="btn btn-wa" href={WHATSAPP_COMMUNITY} target="_blank" rel="noreferrer"><Icon name="chat" size={18} />Join Our Community</a>}
         </div>
         {pills && <div className="hero-pills">{pills.map((t) => <span key={t}>{t}</span>)}</div>}
-        {dark && <div className="btn-row"><button className="btn btn-white" onClick={() => openBooking(service)}>{cta}<span className="dot">→</span></button><a className="btn btn-ghost-light" href={'tel:' + CONTACT.phone.replace(/\s/g, '')}>Call Us</a></div>}
+        {dark && <div className="btn-row">{cta && <button className="btn btn-white" onClick={() => openBooking(service)}>{cta}<span className="dot">→</span></button>}<a className="btn btn-ghost-light" href={'tel:' + CONTACT.phone.replace(/\s/g, '')}>Call Us</a></div>}
         {stats && <div className="hero-stats">{stats.map(([v, l]) => <div key={l}><b>{v}</b><span>{l}</span></div>)}</div>}
         {secondary && <div className="trust-row">{['Trusted Healthcare Professionals', 'Personalized Care', 'Convenient Home Visits'].map((t) => <span key={t}><Icon name="check" size={18} />{t}</span>)}</div>}
       </div>
